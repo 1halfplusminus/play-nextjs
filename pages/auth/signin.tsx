@@ -18,7 +18,7 @@ export default function SignIn({
     <>
       {Object.values(providers).map((provider) =>
         provider.name === 'Credentials' ? (
-          <SignInCreds csrfToken={csrfToken} />
+          <SignInCreds key={provider.name} csrfToken={csrfToken} />
         ) : (
           <div key={provider.name}>
             <button onClick={() => signIn(provider.id)}>
